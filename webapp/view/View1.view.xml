@@ -1,0 +1,58 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.mindset.project7.controller.View1"
+>
+    <Page title="E-commerce App">
+        <content>
+            <!-- Search Field for Filtering Products -->
+            <SearchField
+                placeholder="Search for a product"
+                search="onSearch"
+                liveChange="onSearch"
+            />
+            <!-- Products Table -->
+            <Table items="{/filteredProducts}">
+                <columns>
+                    <Column>
+                        <Text text="Select" />
+                    </Column>
+                    <Column>
+                        <Text text="Product" />
+                    </Column>
+                    <Column>
+                        <Text text="Price" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <CheckBox
+                                selected="{selected}"
+                                select="onProductSelect"
+                            />
+                            <Text text="{name}" />
+                            <Text text="{price}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <!-- Add to Cart Button -->
+            <Button
+                text="Add to Cart"
+                press="onAddToCartPress"
+            />
+
+            <!-- Cart List -->
+            <List items="{/cart}">
+                <items>
+                    <StandardListItem
+                        title="{name}"
+                        description="{price}"
+                    />
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

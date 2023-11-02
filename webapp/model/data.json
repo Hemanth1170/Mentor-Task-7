@@ -1,0 +1,8 @@
+{
+    "products": [
+      { "name": "Product 1", "price": 10, "selected": false },
+      { "name": "Sample 2", "price": 20, "selected": false },
+      { "name": "Product 3", "price": 30, "selected": false }
+    ],
+    "cart": []
+}
